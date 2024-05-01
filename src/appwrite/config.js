@@ -26,7 +26,6 @@ export class Service{
                     featuredImage,
                     status,
                     userId,
-                    createdAt: new Date().getTime()
                 });
             } catch (error) {
                 throw (error);

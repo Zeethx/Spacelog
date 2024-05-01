@@ -19,7 +19,7 @@ export class AuthService{
             if(userAccount){
                 return this.login({email, password});
             } else {
-                throw new Error('Failed to create account');
+                return userAccount;
             }
         } catch (error){
             throw (error);
@@ -28,7 +28,7 @@ export class AuthService{
 
     async login ({email, password}){
         try {
-            return await this.client.account.createEmailSession(email, password);
+            return await this.account.createEmailPasswordSession(email, password);
         } catch (error) {
             throw (error);
         }
@@ -46,7 +46,7 @@ export class AuthService{
 
     async logout(){
         try{
-            this.client.account.deleteSessions();
+            this.account.deleteSessions();
         } catch (error){
             console.log("Appwrite error", error);
         }

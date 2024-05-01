@@ -31,8 +31,7 @@ function App() {
       <div>
         <Header />
         <main>
-        {/* <Outlet /> */}
-        <h1>Appwrite blog app</h1>
+        <Outlet />
         </main>
         <Footer />
       </div>

@@ -1,14 +1,23 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import appwriteService from "../appwrite/config"
 import {Link} from 'react-router-dom'
 
 function PostCard({$id, title, featuredImage}) {
-    
+    const [imageUrl, setImageUrl] = useState(null);
+
+    useEffect(() => {
+        appwriteService.getFilePreview(featuredImage)
+            .then(url => setImageUrl(url))
+            .catch(err => {
+                console.error("Error fetching image:", err);
+            });
+    }, [featuredImage]);
+
   return (
     <Link to={`/post/${$id}`}>
         <div className='w-full bg-gray-100 rounded-xl p-4'>
             <div className='w-full justify-center mb-4'>
-                <img src={appwriteService.getFilePreview(featuredImage)} alt={title}
+                <img src={imageUrl} alt={title}
                 className='rounded-xl' />
 
             </div>

@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 
 export default function Post() {
     const [post, setPost] = useState(null);
+    const [imageUrl, setImageUrl] = useState(null);
     const { slug } = useParams();
     const navigate = useNavigate();
 
@@ -17,8 +18,15 @@ export default function Post() {
     useEffect(() => {
         if (slug) {
             appwriteService.getPost(slug).then((post) => {
-                if (post) setPost(post);
-                else navigate("/");
+                if (post) {
+                    setPost(post);
+                    
+                    appwriteService.getFilePreview(post.featuredImage)
+                        .then(url => setImageUrl(url))
+                        .catch(err => {
+                            console.error("Error fetching image:", err);
+                        });
+                } else navigate("/");
             });
         } else navigate("/");
     }, [slug, navigate]);
@@ -37,7 +45,7 @@ export default function Post() {
             <Container>
                 <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
                     <img
-                        src={appwriteService.getFilePreview(post.featuredImage)}
+                        src={imageUrl || "https://via.placeholder.com/800x400"}
                         alt={post.title}
                         className="rounded-xl"
                     />

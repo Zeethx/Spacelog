@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import appwriteService from "../appwrite/config";
+import authService from '../appwrite/auth';
 import {Container, PostCard} from '../components'
 
 function Home() {
@@ -20,8 +21,11 @@ function Home() {
                     <div className="flex flex-wrap">
                         <div className="p-2 w-full">
                             <h1 className="text-2xl font-bold hover:text-gray-500">
-                                Login to read posts
+                                Welcome, {authService.getCurrentUser().name}! 
                             </h1>
+                            <p className="text-lg text-gray-500">
+                                You have not created any posts yet.
+                            </p>
                         </div>
                     </div>
                 </Container>

@@ -41,13 +41,13 @@ export default function Post() {
     };
 
     return post ? (
-        <div className="py-8">
+    <div className="pt-16 md:pt-20">
             <Container>
                 <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
                     <img
                         src={imageUrl || "https://via.placeholder.com/800x400"}
                         alt={post.title}
-                        className="rounded-xl"
+                        className="rounded-xl max-w-5xl"
                     />
 
                     {isAuthor && (

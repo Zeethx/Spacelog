@@ -35,6 +35,9 @@ function Home() {
     return (
         <div className='w-full py-8'>
             <Container>
+                <div className='mt-10'>
+                    <img src='spacelog-text.png' alt='Spacelog' className='w-1/2 mx-auto my-5' />
+                </div>
                 <div className='flex flex-wrap'>
                     {posts.map((post) => (
                         <div key={post.$id} className='p-2 w-1/4'>

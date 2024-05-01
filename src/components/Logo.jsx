@@ -3,7 +3,7 @@ import React from "react";
 function Logo({ width }) {
     return (
         <img
-        src="public\logo.png"
+        src="logo.png"
         alt="logo"
         width={width}
         >

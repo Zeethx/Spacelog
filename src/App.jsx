@@ -38,7 +38,7 @@ function App() {
     </div>
   ) : 
   (
-    <div className='min-h-sc flex justify-center items-center'>
+    <div className='min-h-screen flex flex-wrap content-between'>
       <div className='text-2xl'>Waiting for Appwrite...</div>
     </div>
   )

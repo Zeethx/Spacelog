@@ -21,7 +21,7 @@ function Home() {
                     <div className="flex flex-wrap">
                         <div className="p-2 w-full">
                             <h1 className="text-2xl font-bold hover:text-gray-500">
-                                Welcome, {authService.getCurrentUser().name}! 
+                                Welcome! 
                             </h1>
                             <p className="text-lg text-gray-500">
                                 You have not created any posts yet.

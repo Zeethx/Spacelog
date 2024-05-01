@@ -48,7 +48,7 @@ function Header() {
                 <li key={item.name} className='last:mr-0'>
                   <button
                     onClick={() => navigate(item.slug)}
-                    className='px-4 py-2 rounded-full text-white hover:bg-blue-500 transition-colors duration-200 ease-in-out font-medium'
+                    className='px-4 py-2 rounded-full text-white hover:bg-pink-400 transition-colors duration-200 ease-in-out font-medium'
                   >
                     {item.name}
                   </button>

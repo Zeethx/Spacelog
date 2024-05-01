@@ -72,29 +72,32 @@ export default function PostForm({ post }) {
 
     return (
         <>
-        <h1 className="text-3xl font-bold mb-4 text-white">{post ? "Edit Post" : "Add Post"}</h1>
-        <form onSubmit={handleSubmit(submit)} className="flex flex-wrap mt-60">
+        <h1 className="text-4xl font-bold text-white text-center border-b border-purple-300
+        mb-4 pt-96 3xl:pt-60 pb-4">{post ? "Edit Post" : "Add Post"}</h1>
+        <form onSubmit={handleSubmit(submit)} className="flex flex-wrap xl:pt-50
+         text-white text-center text-2xl">
             <div className="w-2/3 px-2">
                 <Input
-                    label="Title :"
+                    label="Title"
                     placeholder="Title"
                     className="mb-4"
                     {...register("title", { required: true })}
                 />
                 <Input
-                    label="Slug :"
-                    placeholder="Slug"
+                    label=""
+                    placeholder="Spacelog name"
                     className="mb-4"
                     {...register("slug", { required: true })}
                     onInput={(e) => {
                         setValue("slug", slugTransform(e.currentTarget.value), { shouldValidate: true });
                     }}
+                    readOnly
                 />
-                <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} />
+                <RTE label="Content" name="content" control={control} defaultValue={getValues("content")} />
             </div>
             <div className="w-1/3 px-2">
                 <Input
-                    label="Featured Image :"
+                    label="Cosmic Image"
                     type="file"
                     className="mb-4"
                     accept="image/png, image/jpg, image/jpeg, image/gif"
@@ -110,7 +113,7 @@ export default function PostForm({ post }) {
                     </div>
                 )}
                 <Select
-                    options={["active", "inactive"]}
+                    options={["active", "archived"]}
                     label="Status"
                     className="mb-4"
                     {...register("status", { required: true })}

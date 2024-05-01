@@ -5,7 +5,7 @@ import Logo from '../Logo'
 function Footer() {
   return (
     <footer className= "w-full bg-neutral-800 shadow mt-4">
-        <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div className="w-full p-4 md:py-8 text-white">
             <div className="sm:flex sm:items-center sm:justify-between">
                     <Link to="/" className="flex items-center">
                         <Logo width="70" />

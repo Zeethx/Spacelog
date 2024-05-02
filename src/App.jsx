@@ -39,7 +39,7 @@ function App() {
   ) : 
   (
     <div className='min-h-screen flex flex-wrap content-between'>
-      <div className='text-2xl'>Waiting for Appwrite...</div>
+      <div className='text-2xl text-white'>Waiting for Appwrite...</div>
     </div>
   )
 }

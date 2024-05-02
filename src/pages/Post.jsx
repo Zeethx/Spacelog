@@ -41,13 +41,13 @@ export default function Post() {
     };
 
     return post ? (
-    <div className="pt-16 lg:pt-96 3xl:pt-40">
+    <div className="pt-96 lg:pt-96 3xl:pt-40">
             <Container>
-                <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
+                <div className="flex justify-center mb-4 mt-4 relative p-2">
                     <img
                         src={imageUrl || "https://via.placeholder.com/800x400"}
                         alt={post.title}
-                        className="rounded-xl max-w lg:max-w-5xl"
+                        className="rounded-xl max-w lg:max-w-xl border-2 "
                     />
 
                     {isAuthor && (
@@ -67,7 +67,7 @@ export default function Post() {
                     <h1 className="text-4xl font-bold text-white
                     text-center decoration-slate-300">{post.title}</h1>
                 </div>
-                <div className="browser-css text-white text-balance indent-3 
+                <div className="browser-css text-white text-wrap indent-3 
                 hyphens-auto pb-20 border-t-2 pt-4">
                     {parse(post.content)}
                     </div>

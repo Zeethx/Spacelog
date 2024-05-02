@@ -20,7 +20,7 @@ function Home() {
                 <Container>
                     <div className="flex flex-wrap">
                         <div className="p-2 w-full">
-                            <h1 className="text-2xl font-bold hover:text-gray-500">
+                            <h1 className="text-2xl font-bold text-white">
                                 Welcome! 
                             </h1>
                             <p className="text-lg text-gray-500">
@@ -35,9 +35,12 @@ function Home() {
     return (
         <div className='w-full py-8'>
             <Container>
-                <div className='mt-10'>
+                <div className='mt-16 xl:mt-24 3xl:mt-10'>
                     <img src='spacelog-text.png' alt='Spacelog' className='w-1/2 mx-auto my-5' />
                 </div>
+                <h2 className='text-bold text-sm md:text-lg text-center
+                 text-gray-200 border-b border-purple-300 mb-4'
+                >Write the Wonders of the Universe! </h2>
                 <div className='flex flex-wrap'>
                     {posts.map((post) => (
                         <div key={post.$id} className='p-2 w-1/4'>
